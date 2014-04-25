@@ -44,6 +44,7 @@ class XmlAgg(Aggregate):
 
 
 class Corr(Aggregate):
+    is_computed = True
     sql_function = 'CORR'
     sql_template = '%(function)s(%(field)s, %(y)s)'
 
@@ -53,6 +54,7 @@ class Corr(Aggregate):
 
 
 class RegrAvgX(Aggregate):
+    is_computed = True
     sql_function = 'REGR_AVGX'
     sql_template = '%(function)s(%(field)s, %(y)s)'
 
@@ -62,6 +64,7 @@ class RegrAvgX(Aggregate):
 
 
 class RegrAvgY(Aggregate):
+    is_computed = True
     sql_function = 'REGR_AVGY'
     sql_template = '%(function)s(%(field)s, %(y)s)'
 
@@ -81,6 +84,7 @@ class RegrCount(Aggregate):
 
 
 class RegrIntercept(Aggregate):
+    is_computed = True
     sql_function = 'REGR_INTERCEPT'
     sql_template = '%(function)s(%(field)s, %(y)s)'
 
@@ -90,6 +94,7 @@ class RegrIntercept(Aggregate):
 
 
 class RegrR2(Aggregate):
+    is_computed = True
     sql_function = 'REGR_R2'
     sql_template = '%(function)s(%(field)s, %(y)s)'
 
@@ -99,6 +104,7 @@ class RegrR2(Aggregate):
 
 
 class RegrSlope(Aggregate):
+    is_computed = True
     sql_function = 'REGR_SLOPE'
     sql_template = '%(function)s(%(field)s, %(y)s)'
 
@@ -108,6 +114,7 @@ class RegrSlope(Aggregate):
 
 
 class RegrSXX(Aggregate):
+    is_computed = True
     sql_function = 'REGR_SXX'
     sql_template = '%(function)s(%(field)s, %(y)s)'
 
@@ -117,6 +124,7 @@ class RegrSXX(Aggregate):
 
 
 class RegrSXY(Aggregate):
+    is_computed = True
     sql_function = 'REGR_SXY'
     sql_template = '%(function)s(%(field)s, %(y)s)'
 
@@ -126,6 +134,7 @@ class RegrSXY(Aggregate):
 
 
 class RegrSYY(Aggregate):
+    is_computed = True
     sql_function = 'REGR_SYY'
     sql_template = '%(function)s(%(field)s, %(y)s)'
 
