@@ -41,6 +41,14 @@ class Corr(BaseAggregate):
     name = 'Corr'
 
 
+class CovarPop(BaseAggregate):
+    name = 'COVAR_POP'
+
+
+class CovarSamp(BaseAggregate):
+    name = 'COVAR_SAMP'
+
+
 class RegrAvgX(BaseAggregate):
     name = 'RegrAvgX'
 

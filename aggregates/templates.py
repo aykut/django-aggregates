@@ -53,6 +53,26 @@ class Corr(Aggregate):
         super(Corr, self).__init__(col, y=y, **extra)
 
 
+class CovarPop(Aggregate):
+    is_computed = True
+    sql_function = 'COVAR_POP'
+    sql_template = '%(function)s(%(field)s, %(y)s)'
+
+    def __init__(self, col, y=None, **extra):
+        assert y is not None
+        super(Corr, self).__init__(col, y=y, **extra)
+
+
+class CovarSamp(Aggregate):
+    is_computed = True
+    sql_function = 'COVAR_SAMP'
+    sql_template = '%(function)s(%(field)s, %(y)s)'
+
+    def __init__(self, col, y=None, **extra):
+        assert y is not None
+        super(Corr, self).__init__(col, y=y, **extra)
+
+
 class RegrAvgX(Aggregate):
     is_computed = True
     sql_function = 'REGR_AVGX'
