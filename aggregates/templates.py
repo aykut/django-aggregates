@@ -35,7 +35,7 @@ class StringAgg(Aggregate):
             col, delimiter=delimiter if delimiter else '', **extra)
 
 
-class XmlAgg(Aggregate):
+class XMLAgg(Aggregate):
     sql_function = 'XMLAGG'
 
 

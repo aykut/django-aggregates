@@ -29,8 +29,8 @@ class StringAgg(BaseAggregate):
     name = 'StringAgg'
 
 
-class XmlAgg(BaseAggregate):
-    name = 'XmlAgg'
+class XMLAgg(BaseAggregate):
+    name = 'XMLAgg'
 
 
 class Corr(BaseAggregate):

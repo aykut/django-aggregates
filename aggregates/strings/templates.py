@@ -39,5 +39,5 @@ class Length(Aggregate):
     sql_function = 'LENGTH'
 
 
-class Md5(Aggregate):
+class MD5(Aggregate):
     sql_function = 'MD5'

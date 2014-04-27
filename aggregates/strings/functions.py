@@ -33,5 +33,5 @@ class Length(BaseAggregate):
     name = 'Length'
 
 
-class Md5(BaseAggregate):
-    name = 'Md5'
+class MD5(BaseAggregate):
+    name = 'MD5'

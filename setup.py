@@ -8,10 +8,10 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-aggregates',
-    version='0.1',
+    version='0.1.1',
     packages=find_packages(),
     include_package_data=True,
-    description='PostgreSQL customized aggregate and string functions for '
+    description='Aggregate, String and Conditional SQL functions for '
                 'Django ORM.',
     long_description=README,
     url='https://github.com/aykut/django-aggregates',
