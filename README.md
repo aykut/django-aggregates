@@ -5,6 +5,30 @@ Aggregate, String and Conditional SQL functions to use into Annotate and Aggrega
 Installation
 =================
     pip install django-aggregates
+    
+Usage
+=================
+    >> from aggregates import StringAgg
+    >> People.objects.aggregate(names=StringAgg('name', delimiter(', ')))
+    >> {'names': 'Walter, The Dude, Donny, Jesus'}
+    
+    >> from aggregates import As
+    >> People.objects.values('address__title').annotate(prettyname=As('address__title')).values('prettyname')
+    >> [{'prettyname': 'someadress1'}, {'prettyname': 'someaddress2'}]
+    
+    >> from aggregates.strings import CharLength
+    >> People.objects.annotate(char_len=CharLength('name')).filter(char_len__gt=6)
+    >> [<People: Walter>, <People: The Dude>]
+    
+    >> from aggregates.conditionals import Coalesce, NullIf
+    >> person=People.objects.annotate(null_if=NullIf('name', othercol='surname'))[0]
+    >> person.null_if
+    >> 'Walter'
+    >> person=People.objects.annotate(coalesce=Coalesce('age', default=18))[0]
+    >> person.coalesce
+    >> 18
+    >> person.age
+    >> 
 
 Available Functions
 =================
@@ -57,4 +81,5 @@ Requirements
 
 TODO
 =================
-- UnitTests
+- UnitTests.
+- More detailed informations about functions.
