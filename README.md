@@ -1,8 +1,6 @@
 django-aggregates
 =================
-Aggregate, String and Conditional SQL functions to use into Annotate and Aggregate methods.
-
-Any kind of contribtions and ideas are welcome.
+Aggregate, String and Conditional SQL functions to use into Annotate and Aggregate methods. Any kind of contribitions and ideas are welcome.
 
 Installation
 =================
