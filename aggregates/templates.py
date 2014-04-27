@@ -1,13 +1,9 @@
 from django.db.models.sql.aggregates import Aggregate
 
 
-class CharLength(Aggregate):
-    is_ordinal = True
-    sql_function = 'CHAR_LENGTH'
-
-
-class ArrayAgg(Aggregate):
-    sql_function = 'ARRAY_AGG'
+class As(Aggregate):
+    sql_function = None
+    sql_template = '%(field)s'
 
 
 class BitAnd(Aggregate):
@@ -83,14 +79,14 @@ class RegrAvgX(Aggregate):
         super(RegrAvgX, self).__init__(col, x=x, **extra)
 
 
-class RegrAvgx(Aggregate):
+class RegrAvgY(Aggregate):
     is_computed = True
     sql_function = 'REGR_AVGY'
     sql_template = '%(function)s(%(field)s, %(x)s)'
 
     def __init__(self, col, x=None, **extra):
         assert x is not None
-        super(RegrAvgx, self).__init__(col, x=x, **extra)
+        super(RegrAvgX, self).__init__(col, x=x, **extra)
 
 
 class RegrCount(Aggregate):
