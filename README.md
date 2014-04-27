@@ -40,3 +40,10 @@ Strings:
 - Length
 - MD5  **# Only PostgreSQL**
 
+Conditionals:
+
+    from aggregates.conditionals import ...
+- NullIf
+- Coalesce  **# Only PostgreSQL**
+
+
