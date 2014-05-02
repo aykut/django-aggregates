@@ -83,3 +83,4 @@ TODO
 =================
 - UnitTests.
 - More detailed informations about functions.
+- JSON functions and operations
