@@ -14,15 +14,26 @@ class BitOr(Aggregate):
     sql_function = 'BIT_OR'
 
 
-class BoolAnd(Aggregate):
+class BaseComparisonAggregate(Aggregate):
+    def __init__(self, col, comparison=None, right_operand=None, **extra):
+        assert (not comparison and not right_operand) or (
+            comparison and right_operand)
+        if comparison and right_operand:
+            self.sql_template = "%(function)s(%(field)s %(comparison)s "\
+                                "%(right_operand)s)"
+        super(BaseComparisonAggregate, self).__init__(
+            col, comparison=comparison, right_operand=right_operand, **extra)
+
+
+class BoolAnd(BaseComparisonAggregate):
     sql_function = 'BOOL_AND'
 
 
-class BoolOr(Aggregate):
+class BoolOr(BaseComparisonAggregate):
     sql_function = 'BOOL_OR'
 
 
-class Every(Aggregate):
+class Every(BaseComparisonAggregate):
     sql_function = 'EVERY'
 
 
