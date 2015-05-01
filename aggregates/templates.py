@@ -157,3 +157,30 @@ class RegrSYY(Aggregate):
     def __init__(self, col, x=None, **extra):
         assert x is not None
         super(RegrSYY, self).__init__(col, x=x, **extra)
+
+
+# Ordered-Set Aggregate Functions
+
+class Mode(Aggregate):
+    sql_function = 'MODE'
+
+
+class PercentileCont(Aggregate):
+    is_computed = True
+    sql_function = 'PERCENTILE_CONT'
+    Sql_template = '%(function)s(%(field)s, %(x)s)'
+
+    def __init__(self, col, x=None, **extra):
+        assert x is not None
+        super(PercentileCont, self).__init__(col, x=x, **extra)
+
+
+class PercentileDisc(Aggregate):
+    is_computed = True
+    sql_function = 'PERCENTILE_DISC'
+    Sql_template = '%(function)s(%(field)s, %(x)s)'
+
+    def __init__(self, col, x=None, **extra):
+        assert x is not None
+        super(PercentileDisc, self).__init__(col, x=x, **extra)
+
