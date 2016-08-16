@@ -1,4 +1,8 @@
-from django.db.models.sql.aggregates import Aggregate
+try:
+    from django.db.models.aggregates import Aggregate
+except ImportError:
+    # Fallback for old django versions
+    from django.db.models.sql.aggregates import Aggregate
 
 
 class As(Aggregate):
@@ -183,4 +187,3 @@ class PercentileDisc(Aggregate):
     def __init__(self, col, x=None, **extra):
         assert x is not None
         super(PercentileDisc, self).__init__(col, x=x, **extra)
-
