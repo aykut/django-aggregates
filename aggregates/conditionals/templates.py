@@ -1,4 +1,8 @@
-from django.db.models.sql.aggregates import Aggregate
+try:
+    from django.db.models.aggregates import Aggregate
+except ImportError:
+    # Fallback for old django versions
+    from django.db.models.sql.aggregates import Aggregate
 
 
 class Coalesce(Aggregate):
